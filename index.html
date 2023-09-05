@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Endereço</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Busca de Endereço</h1>
+        <form id="cepForm">
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" class="form-control" id="cep" placeholder="Digite o CEP">
+            </div>
+            <button type="button" class="btn btn-primary" id="searchButton">Buscar</button>
+        </form>
+    </div>
+
+    <div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addressModalLabel">Endereço</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="logradouro">Logradouro:</label>
+                                        <input type="text" class="form-control" id="logradouro" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bairro">Bairro:</label>
+                                        <input type="text" class="form-control" id="bairro" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="estado">Estado:</label>
+                                        <input type="text" class="form-control" id="estado" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="complemento">Complemento:</label>
+                                        <input type="text" class="form-control" id="complemento" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cidade">Localidade:</label>
+                                        <input type="text" class="form-control" id="cidade" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ddd">DDD:</label>
+                                        <input type="text" class="form-control" id="ddd" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Erro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    CEP não encontrado. Verifique o CEP digitado.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery.mask.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
